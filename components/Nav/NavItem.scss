@@ -1,0 +1,9 @@
+@import '../../assets/variables.scss';
+
+.nav-item__svg * {
+  fill: $dark-red;
+}
+
+.nav-item__svg--active * {
+  fill: black;
+}

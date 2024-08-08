@@ -1,11 +1,15 @@
 import './globals.scss'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 
-import Header from '../components/Header'
+import Header from '@/components/Header'
+import Nav from '@/components/Nav'
 
-const inter = Inter({ subsets: ['latin'] })
+const plusJakartaSans = Plus_Jakarta_Sans({
+  weight: '400',
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: 'Whishlist App',
@@ -19,9 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${plusJakartaSans.className} px-4`}>
         <Header />
         {children}
+        <Nav />
       </body>
     </html>
   )
