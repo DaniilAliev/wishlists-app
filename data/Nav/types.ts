@@ -8,7 +8,8 @@ export type NavName = {
   ME: 'Me'
 }
 
-export type MenuItem = {
+export type MenuNavItem = {
   Img: React.FC<SVGProps<SVGSVGElement>>
   name: string
+  active: boolean
 }

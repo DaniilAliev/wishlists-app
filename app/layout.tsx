@@ -24,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakartaSans.className} px-4`}>
-        <Header />
-        {children}
-        <Nav />
+        <main>
+          <Header />
+          {children}
+          <Nav />
+        </main>
       </body>
     </html>
   )
