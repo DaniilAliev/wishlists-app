@@ -5,6 +5,8 @@ import { Plus_Jakarta_Sans } from 'next/font/google'
 
 import Header from '@/components/Header'
 import Nav from '@/components/Nav'
+import { getLocale, getMessages } from 'next-intl/server'
+import { NextIntlClientProvider } from 'next-intl'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   weight: '400',
@@ -16,19 +18,25 @@ export const metadata: Metadata = {
   description: 'Whishlist App'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
+    const locale = await getLocale()
+
+    const messages = await getMessages()
+ 
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${plusJakartaSans.className} px-4`}>
-        <main>
-          <Header />
-          {children}
-          <Nav />
-        </main>
+        <NextIntlClientProvider messages={messages}>
+          <main>
+            <Header />
+            {children}
+            <Nav />
+          </main>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

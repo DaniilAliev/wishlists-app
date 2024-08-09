@@ -1,0 +1,14 @@
+{
+  "HomePage": {
+    "newWishlist": "Новый Вишлист",
+    "wishlists": "Вишлисты",
+    "recentlyViewed": "Недавно просмотренные продукты"
+  },
+  "Nav": {
+    "home": "Главная",
+    "discover": "Найти",
+    "wishlist": "Вишлист",
+    "cart": "Корзина",
+    "me": "Я"
+  }
+}

@@ -13,37 +13,40 @@ import { NAV_NAME } from '@/data/Nav/constants'
 import { NAV_ROUTES } from '@/router/navRoutes'
 
 import NavItem from './NavItem'
-
-const menuItems = [
-  {
-    Img: Home,
-    name: NAV_NAME.HOME,
-    pathname: NAV_ROUTES[NAV_NAME.HOME]
-  },
-  {
-    Img: Discover,
-    name: NAV_NAME.DISCOVER,
-    pathname: NAV_ROUTES[NAV_NAME.DISCOVER]
-  },
-  {
-    Img: WishList,
-    name: NAV_NAME.WISHLIST,
-    pathname: NAV_ROUTES[NAV_NAME.WISHLIST]
-  },
-  {
-    Img: Cart,
-    name: NAV_NAME.CART,
-    pathname: NAV_ROUTES[NAV_NAME.CART]
-  },
-  {
-    Img: Me,
-    name: NAV_NAME.ME,
-    pathname: NAV_ROUTES[NAV_NAME.ME]
-  }
-]
+import { useTranslations } from 'next-intl'
 
 const Nav = () => {
   const pathname = usePathname()
+
+    const t = useTranslations('Nav')
+
+  const menuItems = [
+    {
+      Img: Home,
+      name: t('home'),
+      pathname: NAV_ROUTES[NAV_NAME.HOME]
+    },
+    {
+      Img: Discover,
+      name: t('discover'),
+      pathname: NAV_ROUTES[NAV_NAME.DISCOVER]
+    },
+    {
+      Img: WishList,
+      name: t('wishlist'),
+      pathname: NAV_ROUTES[NAV_NAME.WISHLIST]
+    },
+    {
+      Img: Cart,
+      name: t('cart'),
+      pathname: NAV_ROUTES[NAV_NAME.CART]
+    },
+    {
+      Img: Me,
+      name: t('me'),
+      pathname: NAV_ROUTES[NAV_NAME.ME]
+    }
+  ]
 
   return (
     <nav className="nav flex items-start justify-between h-24 fixed bottom-0 left-0 right-0 ">

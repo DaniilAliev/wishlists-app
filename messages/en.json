@@ -1,0 +1,14 @@
+{
+  "HomePage": {
+    "newWishlist": "New WishList",
+    "wishlists": "WishLists",
+    "recentlyViewed": "Recently Viewed Items"
+  },
+  "Nav": {
+    "home": "Home",
+    "discover": "Discover",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "me": "Me"
+  }
+}

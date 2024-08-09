@@ -3,24 +3,29 @@ import Plus from '@/assets/images/Plus.svg'
 import RecentlyViewed from '@/assets/images/RecentlyViewed.svg'
 import MenuItem from '@/components/MenuItem'
 import { MenuItemType } from '@/data/MenuItem/types'
+import { useTranslations } from 'next-intl'
 
-const homeOptions: Array<MenuItemType> = [
-  {
-    text: 'New WishList',
-    type: 'red',
-    image: Plus
-  },
-  {
-    text: 'WishLists',
-    image: MyWishlist
-  },
-  {
-    text: `Recently Viewed Items`,
-    image: RecentlyViewed
-  }
-]
+
 
 export default function Home() {
+  const t = useTranslations('HomePage')
+
+  const homeOptions: Array<MenuItemType> = [
+    {
+      text: t('newWishlist'),
+      type: 'red',
+      image: Plus
+    },
+    {
+      text: t('wishlists'),
+      image: MyWishlist
+    },
+    {
+      text: t('recentlyViewed'),
+      image: RecentlyViewed
+    }
+  ]
+
   return (
     <div className="home home-container pt-6">
       {homeOptions.map(item => (
