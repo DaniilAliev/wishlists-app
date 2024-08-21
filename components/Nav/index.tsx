@@ -3,6 +3,7 @@
 import './index.scss'
 
 import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 import Cart from '@/assets/images/Cart.svg'
 import Discover from '@/assets/images/Discover.svg'
@@ -13,12 +14,11 @@ import { NAV_NAME } from '@/data/Nav/constants'
 import { NAV_ROUTES } from '@/router/navRoutes'
 
 import NavItem from './NavItem'
-import { useTranslations } from 'next-intl'
 
 const Nav = () => {
   const pathname = usePathname()
 
-    const t = useTranslations('Nav')
+  const t = useTranslations('Nav')
 
   const menuItems = [
     {
@@ -49,13 +49,14 @@ const Nav = () => {
   ]
 
   return (
-    <nav className="nav flex items-start justify-between h-24 fixed bottom-0 left-0 right-0 ">
+    <nav className="nav flex items-start justify-between h-24 fixed bottom-0 left-0 right-0 bg-background-color">
       {menuItems.map(item => (
         <NavItem
           name={item.name}
           Img={item.Img}
           key={item.name}
           active={pathname === item.pathname}
+          pathname={item.pathname}
         />
       ))}
     </nav>

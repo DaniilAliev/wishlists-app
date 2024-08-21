@@ -10,5 +10,8 @@
     "wishlist": "Wishlist",
     "cart": "Cart",
     "me": "Me"
+  },
+  "Discover": {
+    "items": "items"
   }
 }

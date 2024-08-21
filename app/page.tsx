@@ -1,11 +1,10 @@
+import { useTranslations } from 'next-intl'
+
 import MyWishlist from '@/assets/images/MyWishlist.svg'
 import Plus from '@/assets/images/Plus.svg'
 import RecentlyViewed from '@/assets/images/RecentlyViewed.svg'
 import MenuItem from '@/components/MenuItem'
 import { MenuItemType } from '@/data/MenuItem/types'
-import { useTranslations } from 'next-intl'
-
-
 
 export default function Home() {
   const t = useTranslations('HomePage')

@@ -1,6 +1,4 @@
-import { NavName } from './types'
-
-export const NAV_NAME: NavName = {
+export const NAV_NAME = {
   HOME: 'Home',
   DISCOVER: 'Discover',
   WISHLIST: 'Wishlist',
