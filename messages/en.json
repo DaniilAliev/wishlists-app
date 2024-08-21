@@ -13,5 +13,8 @@
   },
   "Discover": {
     "items": "items"
+  },
+  "Cart": {
+    "link": "Go to store"
   }
 }

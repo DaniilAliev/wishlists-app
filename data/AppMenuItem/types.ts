@@ -1,6 +1,6 @@
 import { SVGProps } from 'react'
 
-export type MenuItemType = {
+export type AppMenuItemType = {
   text: string
   type?: 'red'
   image: React.FC<SVGProps<SVGSVGElement>>

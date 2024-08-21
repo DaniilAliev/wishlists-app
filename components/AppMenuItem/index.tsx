@@ -2,9 +2,9 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import { MenuItemType } from '@/data/MenuItem/types'
+import { AppMenuItemType } from '@/data/AppMenuItem/types'
 
-const MenuItem: FC<{ item: MenuItemType }> = ({ item }) => {
+const AppMenuItem: FC<{ item: AppMenuItemType }> = ({ item }) => {
   const { image: Image } = item
   return (
     <Link href="#">
@@ -29,4 +29,4 @@ const MenuItem: FC<{ item: MenuItemType }> = ({ item }) => {
   )
 }
 
-export default MenuItem
+export default AppMenuItem

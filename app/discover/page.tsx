@@ -1,6 +1,12 @@
+import { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 
 import AppImage from '@/components/AppImage/AppImage'
+
+export const metadata: Metadata = {
+  title: 'Discover',
+  description: 'Discover'
+}
 
 const mock = [
   { name: `Riley's wishlist`, length: 1, imgSrc: '' },
@@ -16,7 +22,9 @@ const DiscoverPage = () => {
       <div className="grid grid-cols-2 auto-rows-min gap-2">
         {mock.map(item => (
           <div key={item.name} className="grid grid-cols-1 gap-2">
-            <AppImage src={item.imgSrc} />
+            <div className="h-44">
+              <AppImage src={item.imgSrc} />
+            </div>
             <p>{item.name}</p>
             <span className="text-dark-red text-xs">{`${item.length} ${t('items')}`}</span>
           </div>

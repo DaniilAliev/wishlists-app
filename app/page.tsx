@@ -3,13 +3,13 @@ import { useTranslations } from 'next-intl'
 import MyWishlist from '@/assets/images/MyWishlist.svg'
 import Plus from '@/assets/images/Plus.svg'
 import RecentlyViewed from '@/assets/images/RecentlyViewed.svg'
-import MenuItem from '@/components/MenuItem'
-import { MenuItemType } from '@/data/MenuItem/types'
+import AppMenuItem from '@/components/AppMenuItem'
+import { AppMenuItemType } from '@/data/AppMenuItem/types'
 
 export default function Home() {
   const t = useTranslations('HomePage')
 
-  const homeOptions: Array<MenuItemType> = [
+  const homeOptions: Array<AppMenuItemType> = [
     {
       text: t('newWishlist'),
       type: 'red',
@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="home home-container pt-6">
       {homeOptions.map(item => (
-        <MenuItem item={item} key={item.text} />
+        <AppMenuItem item={item} key={item.text} />
       ))}
     </div>
   )

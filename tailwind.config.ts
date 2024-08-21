@@ -16,7 +16,8 @@ const config: Config = {
       colors: {
         'dark-red': '#CE4B4B',
         'border-color': '#F2E8E8',
-        'background-color': '#FCF7F7'
+        'background-color': '#FCF7F7',
+        'price-color': '#706161'
       }
     }
   },
