@@ -16,5 +16,8 @@
   },
   "Cart": {
     "link": "Go to store"
+  },
+  "Me": {
+    "link": "Go to My Profile"
   }
 }
