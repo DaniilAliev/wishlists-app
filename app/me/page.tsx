@@ -4,6 +4,8 @@ import AppH1Header from '@/components/AppH1Header/AppH1Header'
 import AppHorizontalMenuLink from '@/components/AppHorizontalMenuLink/AppHorizontalMenuLink'
 import AppImage from '@/components/AppImage/AppImage'
 import AppLink from '@/components/AppLink/AppLink'
+import { NAV_NAME } from '@/data/Nav/constants'
+import { NAV_ROUTES } from '@/router/navRoutes'
 
 const Me = () => {
   const options = [
@@ -16,7 +18,7 @@ const Me = () => {
       <div className="me_personal-info h-40 grid grid-cols-2 gap-5">
         <div className="flex flex-col justify-between">
           <AppH1Header text="Daniil Aliev" />
-          <AppLink link="#" text={t('link')} />
+          <AppLink link={NAV_ROUTES[NAV_NAME.PROFILE]} text={t('link')} />
         </div>
         <AppImage src="" />
       </div>

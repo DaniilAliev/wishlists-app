@@ -3,5 +3,6 @@ export const NAV_NAME = {
   DISCOVER: 'Discover',
   WISHLIST: 'Wishlist',
   CART: 'Cart',
-  ME: 'Me'
+  ME: 'Me',
+  PROFILE: 'Profile'
 }
