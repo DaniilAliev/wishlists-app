@@ -48,18 +48,24 @@ const Nav = () => {
     }
   ]
 
+  const menuItemsRoutes = menuItems.flatMap((item) => item.pathname)
+ 
   return (
-    <nav className="nav flex items-start justify-between h-24 fixed bottom-0 left-0 right-0 bg-background-color">
-      {menuItems.map(item => (
-        <NavItem
-          name={item.name}
-          Img={item.Img}
-          key={item.name}
-          active={pathname === item.pathname}
-          pathname={item.pathname}
-        />
-      ))}
-    </nav>
+    <>
+      {menuItemsRoutes.includes(pathname) && (
+        <nav className="nav flex items-start justify-between h-24 fixed bottom-0 left-0 right-0 bg-background-color">
+          {menuItems.map(item => (
+            <NavItem
+              name={item.name}
+              Img={item.Img}
+              key={item.name}
+              active={pathname === item.pathname}
+              pathname={item.pathname}
+            />
+          ))}
+        </nav>
+      )}
+    </>
   )
 }
 

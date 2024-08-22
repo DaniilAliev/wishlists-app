@@ -8,11 +8,13 @@ import { NAV_NAME } from '@/data/Nav/constants'
 import { NAV_ROUTES } from '@/router/navRoutes'
 
 const Me = () => {
-  const options = [
-    { name: 'Settings', link: '' },
-    { name: 'About', link: '' }
-  ]
   const t = useTranslations('Me')
+
+  const options = [
+    { name: t('settings'), link: '' },
+    { name: t('about'), link: '' }
+  ]
+
   return (
     <div className="me mt-4">
       <div className="me_personal-info h-40 grid grid-cols-2 gap-5">

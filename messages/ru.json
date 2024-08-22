@@ -19,5 +19,14 @@
   },
   "Me": {
     "link": "Перейти в Мой Профиль"
+  },
+  "BackButton": {
+    "text": "Назад"
+  },
+  "Profile": {
+    "first name": "Имя",
+    "second name": "Фамилия",
+    "email": "Email",
+    "editPic": "Измените картинку профиля"
   }
 }

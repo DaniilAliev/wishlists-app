@@ -31,11 +31,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${plusJakartaSans.className} px-4`}>
         <NextIntlClientProvider messages={messages}>
-          <main>
-            <Header />
-            {children}
-            <Nav />
-          </main>
+          <Header />
+          <main className="pb-20">{children}</main>
+          <Nav />
         </NextIntlClientProvider>
       </body>
     </html>
