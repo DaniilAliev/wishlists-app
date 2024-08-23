@@ -6,5 +6,7 @@ export const NAV_ROUTES = {
   [NAV_NAME.WISHLIST]: '/wishlist',
   [NAV_NAME.CART]: '/cart',
   [NAV_NAME.ME]: '/me',
-  [NAV_NAME.PROFILE]: '/me/profile'
+  [NAV_NAME.PROFILE]: '/me/profile',
+  [NAV_NAME.SIGN_IN]: '/signin',
+  [NAV_NAME.SIGN_UP]: '/signup'
 }

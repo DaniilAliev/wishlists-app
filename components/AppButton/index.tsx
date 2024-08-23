@@ -1,14 +1,27 @@
 import clsx from "clsx"
 import { FC } from "react"
 
-const AppButton: FC<{ text: string, width?: string, className?: string }> & React.ComponentProps<'button'> = ({text, className, width, ...props}) => {
+interface IButton {
+  text: string
+  width?: string
+  className?: string
+  color: 'red' | 'grey' | 'transparent',
+  type?: "button" | "submit" | "reset"
+}
+
+const AppButton: FC<IButton> & React.ComponentProps<'button'> = ({text, className, width, color, type, ...props}) => {
   return (
     <button
+      type={type}
       {...props}
       className={clsx(
-        'h-12 bg-red-500 hover:bg-red-600 text-white rounded-xl',
+        'h-12 rounded-3xl',
         className,
-        width
+        width,
+        color === 'red' && 'bg-red-500 hover:bg-red-600',
+        color === 'transparent' && 'bg-transparent',
+        color === 'grey' && 'bg-gray-200 hover:bg-gray-300',
+        color === 'red'? 'text-white' : 'text-black'
       )}
     >
       {text}

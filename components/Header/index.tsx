@@ -16,10 +16,14 @@ const Header = () => {
   const pathname = usePathname()
 
   const isMainPage = pathname === NAV_ROUTES[NAV_NAME.HOME]
+  const isSignInPage = pathname === NAV_ROUTES[NAV_NAME.SIGN_IN]
+  const isSignUpPage = pathname === NAV_ROUTES[NAV_NAME.SIGN_UP]
+
+  const pageCondition = isMainPage || isSignInPage || isSignUpPage
 
   const classNameForH1 = clsx(
     'text-dark-red',
-    isMainPage ? 'text-5xl' : 'text-3xl'
+    pageCondition ? 'text-5xl' : 'text-3xl'
   )
 
   return (
@@ -27,7 +31,7 @@ const Header = () => {
       className={clsx(
         'flex',
         'items-center',
-        isMainPage ? 'justify-center h-24' : 'h-16'
+        pageCondition ? 'justify-center h-24' : 'h-16'
       )}
     >
       <h1 className={`${jockeyOne.className} ${classNameForH1}`}>WishLists</h1>

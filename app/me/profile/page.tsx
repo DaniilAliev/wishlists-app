@@ -47,6 +47,7 @@ const Profile = () => {
             text="Save"
             className="profile-settings__button"
             width="w-full"
+            color='red'
           />
         </div>
       </form>

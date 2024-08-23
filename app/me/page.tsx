@@ -12,7 +12,8 @@ const Me = () => {
 
   const options = [
     { name: t('settings'), link: '' },
-    { name: t('about'), link: '' }
+    { name: t('about'), link: '' },
+    { name: t('logout'), link: '' }
   ]
 
   return (

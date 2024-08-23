@@ -7,7 +7,7 @@ const AppEditField: FC<{ type: string; value: string }> = ({ type, value }) => {
   const [inputValue, setInputValue] = useState<string | ''>(value || '')
   const [isFoused, setIsFocused] = useState<boolean>(false)
 
-  const handleChange = e => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
 

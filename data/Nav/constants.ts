@@ -4,5 +4,7 @@ export const NAV_NAME = {
   WISHLIST: 'Wishlist',
   CART: 'Cart',
   ME: 'Me',
-  PROFILE: 'Profile'
+  PROFILE: 'Profile',
+  SIGN_IN: 'SignIn',
+  SIGN_UP: 'SignUp'
 }

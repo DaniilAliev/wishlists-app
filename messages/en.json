@@ -20,7 +20,8 @@
   "Me": {
     "link": "Go to My Profile",
     "settings": "Settings",
-    "about": "About"
+    "about": "About",
+    "logout": "Logout"
   },
   "BackButton": {
     "text": "Go back"
@@ -30,5 +31,22 @@
     "second name": "Second name",
     "email": "Email",
     "editPic": "Edit your profile pic"
+  },
+  "SignIn": {
+    "google": "Continue with Google",
+    "apple": "Continue with Apple",
+    "forgotPassword": "Forgot password?",
+    "next": "Next",
+    "login": "Email or phone number",
+    "password": "Password",
+    "link": "Don't have an account yet? Sign up",
+    "header": "Sign in to your account"
+  },
+  "SignUp": {
+    "next": "Next",
+    "login": "Email or phone number",
+    "password": "Password",
+    "confirm": "Confirm password",
+    "header": "Sign up"
   }
 }
