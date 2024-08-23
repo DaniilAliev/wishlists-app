@@ -15,7 +15,9 @@
     "items": "items"
   },
   "Cart": {
-    "link": "Go to store"
+    "link": "Go to store",
+    "gift": "I'll gift it!",
+    "booked": "Booked :("
   },
   "Me": {
     "link": "Go to My Profile",

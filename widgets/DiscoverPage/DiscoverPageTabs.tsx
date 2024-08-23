@@ -2,7 +2,6 @@
 
 import "./DiscoverPageTabs.scss" 
 
-import AppImage from "@/components/AppImage/AppImage"
 import { TabContext, TabList, TabPanel } from "@mui/lab"
 import { Box, Tab } from "@mui/material"
 import { useTranslations } from "next-intl"
@@ -10,26 +9,32 @@ import { useState } from "react"
 import DiscoverItem from "./DiscoverPageItem"
 
 const mock = [
-  { name: `My wishlist`, length: 1, imgSrc: '', link: '', type: 'presonal' },
+  {
+    name: `My wishlist`,
+    length: 1,
+    imgSrc: '',
+    link: '/wishlist/my/1',
+    type: 'presonal'
+  },
   {
     name: `Riley's wishlist`,
     length: 1,
     imgSrc: '',
-    link: '',
+    link: '/wishlist/others/1',
     type: 'other'
   },
   {
     name: `Evelyn's wishlist`,
     length: 4,
     imgSrc: '',
-    link: '',
+    link: '/wishlist/others/1',
     type: 'other'
   },
   {
     name: `Aiden's wishlist`,
     length: 3,
     imgSrc: '',
-    link: '',
+    link: '/wishlist/others/1',
     type: 'other'
   }
 ]
@@ -52,13 +57,13 @@ const DiscoverPageTabs = () => {
             onChange={handleChange}
             sx={{
               '& .MuiTab-root': {
-                color: '#999999' // Цвет неактивных табов
+                color: '#999999'
               },
-              '& .Mui-selected': {
-                color: '#CE4B4B' // Цвет активного таба
+              '& .mui-16vm3f9-MuiButtonBase-root-MuiTab-root.Mui-selected ': {
+                color: '#CE4B4B'
               },
               '& .MuiTabs-indicator': {
-                backgroundColor: '#CE4B4B' // Цвет индикатора активного таба
+                backgroundColor: '#CE4B4B'
               }
             }}
           >
@@ -76,6 +81,7 @@ const DiscoverPageTabs = () => {
                   imgSrc={item.imgSrc}
                   name={item.name}
                   length={item.length}
+                  link={item.link}
                   t={t}
                 />
               ))}
@@ -91,6 +97,7 @@ const DiscoverPageTabs = () => {
                   imgSrc={item.imgSrc}
                   name={item.name}
                   length={item.length}
+                  link={item.link}
                   t={t}
                 />
               ))}
