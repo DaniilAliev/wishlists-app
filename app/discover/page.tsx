@@ -9,9 +9,10 @@ export const metadata: Metadata = {
 }
 
 const mock = [
-  { name: `Riley's wishlist`, length: 1, imgSrc: '' },
-  { name: `Evelyn's wishlist`, length: 4, imgSrc: '' },
-  { name: `Aiden's wishlist`, length: 3, imgSrc: '' }
+  { name: `My wishlist`, length: 1, imgSrc: '', link: '' },
+  { name: `Riley's wishlist`, length: 1, imgSrc: '', link: '' },
+  { name: `Evelyn's wishlist`, length: 4, imgSrc: '', link: '' },
+  { name: `Aiden's wishlist`, length: 3, imgSrc: '', link: '' }
 ]
 
 const DiscoverPage = () => {

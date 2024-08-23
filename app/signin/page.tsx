@@ -46,7 +46,7 @@ const SignIn = () => {
         <AppInput placeholder={t('login')} />
         <AppInput placeholder={t('password')} type='password' />
 
-        <div className="flex justify-center my-2">
+        <div className="flex justify-center my-4">
           <AppLink
             link={NAV_ROUTES[NAV_NAME.SIGN_UP]}
             text="Don't have an account yet? Sign up"
