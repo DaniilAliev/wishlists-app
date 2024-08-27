@@ -6,5 +6,6 @@ export const NAV_NAME = {
   ME: 'Me',
   PROFILE: 'Profile',
   SIGN_IN: 'SignIn',
-  SIGN_UP: 'SignUp'
+  SIGN_UP: 'SignUp',
+  ADD_ITEM: 'AddItem'
 }

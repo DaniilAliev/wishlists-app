@@ -8,5 +8,6 @@ export const NAV_ROUTES = {
   [NAV_NAME.ME]: '/me',
   [NAV_NAME.PROFILE]: '/me/profile',
   [NAV_NAME.SIGN_IN]: '/signin',
-  [NAV_NAME.SIGN_UP]: '/signup'
+  [NAV_NAME.SIGN_UP]: '/signup',
+  [NAV_NAME.ADD_ITEM]: '/additem'
 }

@@ -29,12 +29,17 @@ const Header = () => {
   return (
     <header
       className={clsx(
+        'fixed top-0 left-0 right-0 bg-background-color px-4',
         'flex',
         'items-center',
         pageCondition ? 'justify-center h-24' : 'h-16'
       )}
     >
-      <h1 className={`${jockeyOne.className} ${classNameForH1}`}>WishLists</h1>
+      <h1
+        className={`${jockeyOne.className} ${classNameForH1}`}
+      >
+        WishLists
+      </h1>
     </header>
   )
 }

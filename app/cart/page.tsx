@@ -26,7 +26,7 @@ const mockOptions = [
 
 const CartPage = () => {
   return (
-    <div className="cart-page mt-4">
+    <div className="cart-page pt-16">
       <AppH1Header text="Shopping cart" />
 
       <div className="cart-page__container mt-5">

@@ -9,7 +9,7 @@ const SignUp = () => {
   const t = useTranslations('SignUp')
 
   return (
-    <div className="sign-up">
+    <div className="sign-up pt-24">
       <div className="flex justify-center">
         <h1 className="text-xl">{t('header')}</h1>
       </div>

@@ -37,14 +37,14 @@ const SignIn = () => {
     }
   ]
   return (
-    <div className="sing-in">
+    <div className="sing-in pt-24">
       <div className="flex justify-center">
         <h1 className="text-xl">{t('header')}</h1>
       </div>
 
       <form action="">
         <AppInput placeholder={t('login')} />
-        <AppInput placeholder={t('password')} type='password' />
+        <AppInput placeholder={t('password')} type="password" />
 
         <div className="flex justify-center my-4">
           <AppLink
@@ -56,7 +56,12 @@ const SignIn = () => {
 
         <div>
           {buttons.map(button => (
-            <AppButton text={button.text} color={button.variant} width="w-full" className="mb-6"/>
+            <AppButton
+              text={button.text}
+              color={button.variant}
+              width="w-full"
+              className="mb-6"
+            />
           ))}
         </div>
       </form>

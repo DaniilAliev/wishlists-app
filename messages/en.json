@@ -50,5 +50,10 @@
     "password": "Password",
     "confirm": "Confirm password",
     "header": "Sign up"
+  },
+  "AddItem": {
+    "add": "Add Item",
+    "link": "Drop the link",
+    "or": "or"
   }
 }

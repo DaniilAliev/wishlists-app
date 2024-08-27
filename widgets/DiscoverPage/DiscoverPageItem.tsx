@@ -18,12 +18,16 @@ const DiscoverItem: React.FC<DiscoverItemProps> = ({
 }) => {
   return (
     <Link href={link}>
-      <div className="grid grid-cols-1 gap-2">
-        <div className="h-44">
+      <div className="grid">
+        <div className="h-40">
           <AppImage src={imgSrc} />
         </div>
-        <p>{name}</p>
-        <span className="text-dark-red text-xs">{`${length} ${t('items')}`}</span>
+        <div>
+          <p>{name}</p>
+        </div>
+        <div>
+          <span className="text-dark-red text-xs">{`${length} ${t('items')}`}</span>
+        </div>
       </div>
     </Link>
   )

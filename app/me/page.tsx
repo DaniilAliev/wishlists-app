@@ -17,7 +17,7 @@ const Me = () => {
   ]
 
   return (
-    <div className="me mt-4">
+    <div className="me pt-16">
       <div className="me_personal-info h-40 grid grid-cols-2 gap-5">
         <div className="flex flex-col justify-between">
           <AppH1Header text="Daniil Aliev" />

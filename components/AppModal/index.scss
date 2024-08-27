@@ -1,0 +1,19 @@
+@import '../../assets/variables.scss';
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 85%;
+  background-color: $border-color;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px 10px 0 0;
+  border-top: 2px solid $dark-red;
+
+  &--active {
+    transform: translateY(0);
+  }
+}

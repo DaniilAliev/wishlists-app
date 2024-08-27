@@ -37,7 +37,7 @@ export default async function RootLayout({
           <ThemeProvider theme={theme}>
             <NextIntlClientProvider messages={messages}>
               <Header />
-              <main className="pb-20">{children}</main>
+              <main className="h-full">{children}</main>
               <Nav />
             </NextIntlClientProvider>
           </ThemeProvider>

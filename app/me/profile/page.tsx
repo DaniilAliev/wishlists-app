@@ -24,7 +24,7 @@ const Profile = () => {
     }
   ]
   return (
-    <div className="profile-settings mt-2">
+    <div className="profile-settings pt-16 pb-20 ">
       <div className="mb-4">
         <AppGoBackLink link={NAV_ROUTES[NAV_NAME.ME]} />
       </div>
@@ -47,7 +47,7 @@ const Profile = () => {
             text="Save"
             className="profile-settings__button"
             width="w-full"
-            color='red'
+            color="red"
           />
         </div>
       </form>

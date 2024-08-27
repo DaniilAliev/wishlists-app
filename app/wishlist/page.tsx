@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const DiscoverPage = () => {
   return (
-    <div className="discover discover__container">
+    <div className="discover discover__container pt-12">
       <DiscoverPageTabs />
     </div>
   )

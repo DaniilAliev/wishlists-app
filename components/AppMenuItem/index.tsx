@@ -7,7 +7,7 @@ import { AppMenuItemType } from '@/data/AppMenuItem/types'
 const AppMenuItem: FC<{ item: AppMenuItemType }> = ({ item }) => {
   const { image: Image } = item
   return (
-    <Link href="#">
+    <Link href={item.link}>
       <div
         className={clsx(
           'item',

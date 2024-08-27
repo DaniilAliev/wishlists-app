@@ -3,6 +3,9 @@ import React from 'react'
 import PlusSvg from '@/assets/images/Plus.svg'
 import AppCartItem from '@/components/AppCartItem/AppCartItem'
 import { APP_CART_ITEM } from '@/data/AppCartItem/constants'
+import AppGoBackLink from '@/components/AppGoBackLink'
+import { NAV_ROUTES } from '@/router/navRoutes'
+import { NAV_NAME } from '@/data/Nav/constants'
 
 const mockOptions = [
   {
@@ -20,8 +23,9 @@ const mockOptions = [
 ]
 const PageOthersWishlist = () => {
   return (
-    <div className="others-wishlist-page">
-      <div className="others-wishlist-page__header-container">
+    <div className="others-wishlist-page pt-16">
+      <AppGoBackLink link={NAV_ROUTES[NAV_NAME.WISHLIST]} />
+      <div className="others-wishlist-page__header-container mt-4">
         <AppH1Header text="My wishlist" />
       </div>
 

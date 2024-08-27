@@ -18,13 +18,14 @@ const AppCartItem: FC<{ item: AppCartItemType, type: 'my' | 'cart' | 'other' }> 
         <div className="flex flex-col justify-between size-full">
           <p>{item.name}</p>
           <p className="text-xs text-price-color">{item.price}</p>
-          {type === APP_CART_ITEM.CART && (
+          {type === APP_CART_ITEM.CART ? (
             <AppLink text={t('link')} link={item.link} />
-          )}
-          {type === APP_CART_ITEM.OTHER && (
-            <div className='flex justify-end'>
-              <AppLink text={t('gift')} link={item.link} />
-            </div>
+          ) : (
+            type === APP_CART_ITEM.OTHER && (
+              <div className="flex justify-end">
+                <AppLink text={t('gift')} link={item.link} />
+              </div>
+            )
           )}
         </div>
         {type !== APP_CART_ITEM.OTHER && (
