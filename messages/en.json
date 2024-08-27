@@ -54,6 +54,12 @@
   "AddItem": {
     "add": "Add Item",
     "link": "Drop the link",
-    "or": "or"
+    "or": "or",
+    "name": "Name",
+    "desc": "Description",
+    "price": "Price",
+    "save": "Save",
+    "addFiles": "Add Files",
+    "linkInput": "Link"
   }
 }
