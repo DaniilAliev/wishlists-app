@@ -7,6 +7,7 @@ import AppMenuItem from '@/components/AppMenuItem'
 import { AppMenuItemType } from '@/data/AppMenuItem/types'
 import { NAV_ROUTES } from '@/router/navRoutes'
 import { NAV_NAME } from '@/data/Nav/constants'
+import AuthGuard from '@/guards/AuthGuard'
 
 export default function Home() {
   const t = useTranslations('HomePage')
@@ -32,9 +33,11 @@ export default function Home() {
 
   return (
     <div className="home home-container pt-24">
-      {homeOptions.map(item => (
-        <AppMenuItem item={item} key={item.text} />
-      ))}
+      <AuthGuard>
+        {homeOptions.map(item => (
+          <AppMenuItem item={item} key={item.text} />
+        ))}
+      </AuthGuard>
     </div>
   )
 }

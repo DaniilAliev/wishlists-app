@@ -4,6 +4,7 @@ import AppLink from "@/components/AppLink/AppLink"
 import { NAV_NAME } from "@/data/Nav/constants"
 import { NAV_ROUTES } from "@/router/navRoutes"
 import { useTranslations } from "next-intl"
+import { signIn } from '@/auth'
 
 type button = {
       text: string,
@@ -53,17 +54,21 @@ const SignIn = () => {
             className="text-sm"
           />
         </div>
+      </form>
 
-        <div>
-          {buttons.map(button => (
-            <AppButton
-              text={button.text}
-              color={button.variant}
-              width="w-full"
-              className="mb-6"
-            />
-          ))}
-        </div>
+      <form
+        action={async () => {
+          'use server'
+          const res = await signIn('github', { redirectTo: '/' })
+        }}
+      >
+        <AppButton
+          text={t('github')}
+          color={'grey'}
+          type="submit"
+          width="w-full"
+          className="mb-6"
+        />
       </form>
     </div>
   )

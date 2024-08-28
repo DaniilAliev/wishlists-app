@@ -72,7 +72,7 @@ const DiscoverPageTabs = () => {
           </TabList>
         </Box>
         <TabPanel value="1" className="discover__tab">
-          <div className="grid gap-4 grid-cols-2 ">
+          <div className="discover__tab-container">
             {mock
               .filter(item => item.type === 'presonal')
               .map(item => (
@@ -88,7 +88,7 @@ const DiscoverPageTabs = () => {
           </div>
         </TabPanel>
         <TabPanel value="2" className="discover__tab">
-          <div className="grid gap-4 grid-cols-2">
+          <div className="discover__tab-container">
             {mock
               .filter(item => item.type !== 'presonal')
               .map(item => (

@@ -37,6 +37,7 @@
   "SignIn": {
     "google": "Продолжить с Google",
     "apple": "Продолжить с Apple",
+    "github": "Продолжить с Github",
     "forgotPassword": "Забыли пароль?",
     "next": "Далее",
     "login": "Email or телефон",

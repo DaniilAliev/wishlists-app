@@ -5,11 +5,11 @@ import NavigateNextSVG from '@/assets/images/NavigateNext.svg'
 
 const AppHorizontalMenuLink: FC<{ text: string; link: string }> = ({
   text,
-  link
+  link,
 }) => {
   return (
     <Link href={link} className="flex justify-between items-center">
-      <p>{text}</p>
+      <button>{text}</button>
       <NavigateNextSVG width={7} height={12} />
     </Link>
   )

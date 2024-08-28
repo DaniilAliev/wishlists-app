@@ -36,6 +36,7 @@
   },
   "SignIn": {
     "google": "Continue with Google",
+    "github": "Continue with Github",
     "apple": "Continue with Apple",
     "forgotPassword": "Forgot password?",
     "next": "Next",

@@ -10,6 +10,7 @@ import Header from '@/components/Header'
 import Nav from '@/components/Nav'
 import { ThemeProvider } from '@mui/material'
 import theme from '@/theme'
+import AuthGuard from '@/guards/AuthGuard'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   weight: '400',
@@ -33,15 +34,17 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${plusJakartaSans.className} px-4`}>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
-            <NextIntlClientProvider messages={messages}>
-              <Header />
-              <main className="h-full">{children}</main>
-              <Nav />
-            </NextIntlClientProvider>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        {/* <AuthGuard> */}
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={theme}>
+              <NextIntlClientProvider messages={messages}>
+                <Header />
+                  <main className="h-full">{children}</main>
+                <Nav />
+              </NextIntlClientProvider>
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        {/* </AuthGuard> */}
       </body>
     </html>
   )

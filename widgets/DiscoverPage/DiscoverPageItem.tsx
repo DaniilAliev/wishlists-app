@@ -1,3 +1,5 @@
+import './DiscoverPageItem.scss'
+
 import AppImage from "@/components/AppImage/AppImage"
 import Link from "next/link"
 
@@ -18,8 +20,8 @@ const DiscoverItem: React.FC<DiscoverItemProps> = ({
 }) => {
   return (
     <Link href={link}>
-      <div className="grid">
-        <div className="h-40">
+      <div className="discover-page-item">
+        <div className="discover-page-item__image">
           <AppImage src={imgSrc} />
         </div>
         <div>
