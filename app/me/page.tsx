@@ -5,6 +5,8 @@ import PageMePersonalInfo from '@/widgets/PageMe/PageMePersonalInfo'
 import { Suspense } from 'react'
 import { signOut } from '@/auth'
 import AppButton from '@/components/AppButton'
+import { Skeleton } from '@mui/material'
+import Loading from './loading'
 
 const PageMe = () => {
   const t = useTranslations('Me')
@@ -16,7 +18,7 @@ const PageMe = () => {
 
   return (
     <div className="me pt-16">
-      <Suspense fallback={<div>Loading</div>}>
+      <Suspense fallback={<Loading />}>
         <PageMePersonalInfo />
       </Suspense>
 

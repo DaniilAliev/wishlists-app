@@ -13,7 +13,6 @@ const PageMePersonalInfo = async () => {
 
   const session = await auth()
   const user = session?.user
-  console.log(user)
 
   return (
     <div className="me_personal-info">

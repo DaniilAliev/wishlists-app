@@ -34,17 +34,15 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${plusJakartaSans.className} px-4`}>
-        {/* <AuthGuard> */}
-          <AppRouterCacheProvider>
-            <ThemeProvider theme={theme}>
-              <NextIntlClientProvider messages={messages}>
-                <Header />
-                  <main className="h-full">{children}</main>
-                <Nav />
-              </NextIntlClientProvider>
-            </ThemeProvider>
-          </AppRouterCacheProvider>
-        {/* </AuthGuard> */}
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <NextIntlClientProvider messages={messages}>
+              <Header />
+                <main className="h-full">{children}</main>
+              <Nav />
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   )

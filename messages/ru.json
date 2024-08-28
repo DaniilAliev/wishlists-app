@@ -29,8 +29,7 @@
     "text": "Назад"
   },
   "Profile": {
-    "first name": "Имя",
-    "second name": "Фамилия",
+    "name": "Имя",
     "email": "Email",
     "editPic": "Измените картинку профиля"
   },

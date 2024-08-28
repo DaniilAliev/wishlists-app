@@ -32,6 +32,7 @@ const Header = () => {
         'fixed top-0 left-0 right-0 bg-background-color px-4',
         'flex',
         'items-center',
+        'z-50',
         pageCondition ? 'justify-center h-24' : 'h-16'
       )}
     >

@@ -29,8 +29,7 @@
     "text": "Go back"
   },
   "Profile": {
-    "first name": "First name",
-    "second name": "Second name",
+    "name": "Name",
     "email": "Email",
     "editPic": "Edit your profile pic"
   },
