@@ -1,4 +1,7 @@
-import Loading from '@/app/me/profile/loading'
+import './index.scss'
+
+import { getTranslations } from 'next-intl/server'
+
 import { auth } from '@/auth'
 import AppButton from '@/components/AppButton'
 import AppEditField from '@/components/AppEditField/AppEditField'
@@ -7,7 +10,6 @@ import AppImage from '@/components/AppImage/AppImage'
 import AppLink from '@/components/AppLink/AppLink'
 import { NAV_NAME } from '@/data/Nav/constants'
 import { NAV_ROUTES } from '@/router/navRoutes'
-import { getTranslations } from 'next-intl/server'
 
 const PageProfile = async () => {
   const t = await getTranslations('Profile')
@@ -33,9 +35,7 @@ const PageProfile = async () => {
 
       <form action="" className="profile-settings__form">
         <div className="profile-settings__edit-pic size-full flex flex-col items-center ">
-          <div className="w-72 aspect-square">
-            <AppImage src={user?.image} />
-          </div>
+          <AppImage src={user?.image} />
           <AppLink link={'#'} text={t('editPic')} className="p-4" />
         </div>
         <div className="profile-settings__edits">

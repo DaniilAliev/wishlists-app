@@ -1,11 +1,11 @@
 import { useTranslations } from 'next-intl'
-
-import AppHorizontalMenuLink from '@/components/AppHorizontalMenuLink/AppHorizontalMenuLink'
-import PageMePersonalInfo from '@/widgets/PageMe/PageMePersonalInfo'
 import { Suspense } from 'react'
+
 import { signOut } from '@/auth'
 import AppButton from '@/components/AppButton'
-import { Skeleton } from '@mui/material'
+import AppHorizontalMenuLink from '@/components/AppHorizontalMenuLink/AppHorizontalMenuLink'
+import PageMePersonalInfo from '@/widgets/PageMe/PageMePersonalInfo'
+
 import Loading from './loading'
 
 const PageMe = () => {
@@ -13,7 +13,7 @@ const PageMe = () => {
 
   const options = [
     { name: t('settings'), link: '' },
-    { name: t('about'), link: '' },
+    { name: t('about'), link: '' }
   ]
 
   return (
