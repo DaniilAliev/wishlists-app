@@ -1,12 +1,9 @@
 import { useTranslations } from 'next-intl'
-import { Suspense } from 'react'
 
 import { signOut } from '@/auth'
 import AppButton from '@/components/AppButton'
 import AppHorizontalMenuLink from '@/components/AppHorizontalMenuLink/AppHorizontalMenuLink'
 import PageMePersonalInfo from '@/widgets/PageMe/PageMePersonalInfo'
-
-import Loading from './loading'
 
 const PageMe = () => {
   const t = useTranslations('Me')
@@ -18,9 +15,7 @@ const PageMe = () => {
 
   return (
     <div className="me pt-16">
-      <Suspense fallback={<Loading />}>
-        <PageMePersonalInfo />
-      </Suspense>
+      <PageMePersonalInfo />
 
       <div className="me-settings mt-32 pb-32 flex flex-col gap-6">
         {options.map(option => (

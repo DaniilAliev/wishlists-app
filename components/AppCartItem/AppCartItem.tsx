@@ -13,17 +13,17 @@ const AppCartItem: FC<{ item: AppCartItemType, type: 'my' | 'cart' | 'other' }> 
 
   return (
     <div className="cart-item cart-item__container h-24 mb-5 pt-2.5 pb-3 grid grid-cols-[1fr_2fr] gap-5">
-      <AppImage src={item.imageSrc} />
+      <AppImage src={item.imageUrl} />
       <div className="cart-item__info-container h-full flex">
         <div className="flex flex-col justify-between size-full">
           <p>{item.name}</p>
           <p className="text-xs text-price-color">{item.price}</p>
           {type === APP_CART_ITEM.CART ? (
-            <AppLink text={t('link')} link={item.link} />
+            <AppLink text={t('link')} link={item.url} />
           ) : (
             type === APP_CART_ITEM.OTHER && (
               <div className="flex justify-end">
-                <AppLink text={t('gift')} link={item.link} />
+                <AppLink text={t('gift')} link={item.url} />
               </div>
             )
           )}

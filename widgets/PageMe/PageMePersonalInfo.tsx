@@ -13,6 +13,7 @@ const PageMePersonalInfo = async () => {
   const t = useTranslations('Me')
 
   const session = await auth()
+
   const user = session?.user
 
   return (

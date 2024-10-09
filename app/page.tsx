@@ -5,9 +5,9 @@ import Plus from '@/assets/images/Plus.svg'
 import RecentlyViewed from '@/assets/images/RecentlyViewed.svg'
 import AppMenuItem from '@/components/AppMenuItem'
 import { AppMenuItemType } from '@/data/AppMenuItem/types'
-import { NAV_ROUTES } from '@/router/navRoutes'
 import { NAV_NAME } from '@/data/Nav/constants'
 import AuthGuard from '@/guards/AuthGuard'
+import { NAV_ROUTES } from '@/router/navRoutes'
 
 export default function Home() {
   const t = useTranslations('HomePage')

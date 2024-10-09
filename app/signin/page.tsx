@@ -1,16 +1,17 @@
-import AppButton from "@/components/AppButton"
-import AppInput from "@/components/AppInput"
-import AppLink from "@/components/AppLink/AppLink"
-import { NAV_NAME } from "@/data/Nav/constants"
-import { NAV_ROUTES } from "@/router/navRoutes"
-import { useTranslations } from "next-intl"
+import { useTranslations } from 'next-intl'
+
 import { signIn } from '@/auth'
+import AppButton from '@/components/AppButton'
+import AppInput from '@/components/AppInput'
+import AppLink from '@/components/AppLink/AppLink'
+import { NAV_NAME } from '@/data/Nav/constants'
+import { NAV_ROUTES } from '@/router/navRoutes'
 
 type button = {
-      text: string,
-      variant: 'grey' | 'red' | 'transparent',
-      onClick: () => void
-    }
+  text: string
+  variant: 'grey' | 'red' | 'transparent'
+  onClick: () => void
+}
 
 const SignIn = () => {
   const t = useTranslations('SignIn')
@@ -59,7 +60,9 @@ const SignIn = () => {
       <form
         action={async () => {
           'use server'
-          const res = await signIn('github', { redirectTo: '/' })
+          const res = await signIn('github', {
+            redirectTo: '/'
+          })
         }}
       >
         <AppButton
