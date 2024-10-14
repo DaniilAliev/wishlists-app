@@ -1,7 +1,8 @@
+import jwt from 'jsonwebtoken'
 import NextAuth from 'next-auth'
 import GitHub from 'next-auth/providers/github'
-import { SignJWT, jwtDecrypt, JWTPayload, KeyLike } from 'jose'
-import jwt from 'jsonwebtoken';
+
+import { prisma } from './prisma/prisma-client'
 
 export const authOptions = NextAuth({
   providers: [GitHub],
@@ -14,30 +15,58 @@ export const authOptions = NextAuth({
   },
   callbacks: {
     async jwt({ token, user }) {
-      // Добавляем данные пользователя в токен только при первой аутентификации
+      console.log('Token:', token)
+      console.log('User:', user)
+
+      const findUser = await prisma.user.findFirst({
+        where: {
+          name: user.name as string
+        }
+      })
+
+      await (findUser
+        ? prisma.user.update({
+            where: { email: user.email as string },
+            data: {
+              email: user.email as string,
+              name: user.name as string,
+              imageUrl: user.image as string
+            }
+          })
+        : prisma.user.create({
+            data: {
+              email: user.email as string,
+              name: user.name as string,
+              imageUrl: user.image as string
+            }
+          }))
+
       if (user) {
-        token.id = user.id // Добавляем id пользователя
-        token.email = user.email // Добавляем email, если необходимо
+        token.id = user.id
+        token.email = user.email
       }
       return token
     },
     async session({ session }) {
       return session
     }
+    // authorized: async ({ auth }) => {
+    //   // Logged in users are authenticated, otherwise redirect to login page
+    //   return !!auth
+    // }
   },
   jwt: {
     async encode({ secret, token }) {
-      // Генерация JWT
-      return jwt.sign(token, secret, { expiresIn: '1m' })
+      return jwt.sign(token, secret, { expiresIn: '1h' })
     }
   },
   cookies: {
     sessionToken: {
       name: 'authjs.session-token',
       options: {
-        httpOnly: false, 
+        httpOnly: false,
         sameSite: 'lax',
-        path: '/',
+        path: '/'
         // secure: process.env.NODE_ENV === 'production' // Используйте secure в продакшене
       }
     }

@@ -1,16 +1,18 @@
-import { BaseService } from '@/utils/BaseService'
 import { Cart } from '@prisma/client'
-import { cookies } from 'next/headers'
 
-const cookie = cookies().get('authjs.session-token')
+import { BaseService } from '@/utils/BaseService'
 
 class CartServiсeClass extends BaseService {
-  async getCart() {    
-    const headers = {
-      Authorization: `Bearer ${cookie?.value}`
-    }
+  async getCart() {
+    const { data } = await this.httpClient.get<Array<Cart>>(this.getPath(''))
+    return data
+  }
 
-    const { data } = await this.httpClient.get<Array<Cart>>(this.getPath(''), { headers })
+  async deleteCart(id: number) {
+    const { data } = await this.httpClient.delete(this.getPath(''), {
+      params: { id }
+    })
+
     return data
   }
 }

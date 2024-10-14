@@ -10,21 +10,21 @@ import AppImage from '@/components/AppImage/AppImage'
 import AppLink from '@/components/AppLink/AppLink'
 import { NAV_NAME } from '@/data/Nav/constants'
 import { NAV_ROUTES } from '@/router/navRoutes'
+import { ProfileService } from '@/data/Me/ProfileService'
 
 const PageProfile = async () => {
   const t = await getTranslations('Profile')
 
-  let session = await auth()
-  let user = session?.user
+  const user = await ProfileService.getProfile()
 
   const fields = [
     {
       type: t('name'),
-      value: user?.name || ''
+      value: user.name || ''
     },
     {
       type: t('email'),
-      value: user?.email || ''
+      value: user.email || ''
     }
   ]
   return (
@@ -35,7 +35,7 @@ const PageProfile = async () => {
 
       <form action="" className="profile-settings__form">
         <div className="profile-settings__edit-pic size-full flex flex-col items-center ">
-          <AppImage src={user?.image} />
+          <AppImage src={user.imageUrl} />
           <AppLink link={'#'} text={t('editPic')} className="p-4" />
         </div>
         <div className="profile-settings__edits">

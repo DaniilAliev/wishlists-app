@@ -1,12 +1,14 @@
-import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
-import { decode } from 'next-auth/jwt'
-import jwt from 'jsonwebtoken'
 import { decodeJwt } from 'jose'
-
+import { NAV_ROUTES } from './router/navRoutes'
+import { NAV_NAME } from './data/Nav/constants'
 
 export async function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/api/auth')) {
+  const isAuthRoute = request.nextUrl.pathname.startsWith('/api/auth')
+  const isLoginRoute =
+    request.nextUrl.pathname.startsWith(NAV_ROUTES[NAV_NAME.SIGN_IN])
+
+  if (isAuthRoute || isLoginRoute) {
     return NextResponse.next()
   }
 

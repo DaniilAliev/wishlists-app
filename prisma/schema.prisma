@@ -29,6 +29,7 @@ model Cart {
   price Int
   url String
   imageUrl String
+  status String @default("free")
 
   user User @relation(fields: [UserId], references: [id])
   UserId Int

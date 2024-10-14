@@ -10,21 +10,6 @@ export const metadata: Metadata = {
   description: 'Shopping cart'
 }
 
-const mockOptions = [
-  {
-    name: 'The Book of Wisdom',
-    price: 1000,
-    imageUrl: '',
-    url: ''
-  },
-  {
-    name: 'PlayStation 5',
-    price: 50_000,
-    imageUrl: '',
-    url: ''
-  }
-]
-
 const CartPage = async () => {
   const cartItems = await CartServiсe.getCart()
 

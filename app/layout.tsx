@@ -11,6 +11,8 @@ import Nav from '@/components/Nav'
 import { ThemeProvider } from '@mui/material'
 import theme from '@/theme'
 import AuthGuard from '@/guards/AuthGuard'
+import { NextAuthProvider } from '@/guards/NextAuthProvider'
+import { SessionProvider } from 'next-auth/react'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   weight: '400',
@@ -23,7 +25,8 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({
-  children
+  children,
+  // session
 }: Readonly<{
   children: React.ReactNode
 }>) {
@@ -34,6 +37,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${plusJakartaSans.className} px-4`}>
+        {/* <SessionProvider session={session}> */}
           <AppRouterCacheProvider>
             <ThemeProvider theme={theme}>
               <NextIntlClientProvider messages={messages}>
@@ -43,6 +47,7 @@ export default async function RootLayout({
               </NextIntlClientProvider>
             </ThemeProvider>
           </AppRouterCacheProvider>
+        {/* </SessionProvider> */}
       </body>
     </html>
   )

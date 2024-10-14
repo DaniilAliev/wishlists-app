@@ -1,12 +1,23 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 import Link from 'next/link'
 import { FC } from 'react'
 
-const AppLink: FC<{ link: string; text: string, className?: string }> = ({ link, text, className }) => {
+const AppLink: FC<{
+  link: string
+  text: string
+  className?: string
+  disabled?: boolean
+}> = ({ link, text, className, disabled }) => {
   return (
-    <Link href={link} className={clsx("text-dark-red", className)}>
-      {text}
-    </Link>
+    <>
+      {disabled ? (
+        <span className="text-gray-400">{text}</span>
+      ) : (
+        <Link href={link} className={clsx('text-dark-red', className)}>
+          {text}
+        </Link>
+      )}
+    </>
   )
 }
 
