@@ -7,6 +7,8 @@ import { FC, useTransition } from 'react'
 import DeleteSVG from '@/assets/images/delete.svg'
 import { deleteCartItem } from '@/data/AppCartItem/actions'
 import { APP_CART_ITEM } from '@/data/AppCartItem/constants'
+import { AppInfoType } from '@/data/AppInfo/constants'
+import { useInfoStore } from '@/store/info'
 
 import AppImage from '../AppImage/AppImage'
 import AppLink from '../AppLink/AppLink'
@@ -22,6 +24,8 @@ const AppCartItem: FC<{
   type: 'my' | 'cart' | 'other'
 }> = ({ item, type }) => {
   const [isPending, startTransition] = useTransition()
+
+  const setInfo = useInfoStore(state => state.setInfo)
 
   const t = useTranslations('Cart')
 
@@ -44,10 +48,9 @@ const AppCartItem: FC<{
     startTransition(async () => {
       const result = await deleteCartItem(item.id)
       if (result.success) {
-        // setIsDeleted(true)
+        setInfo('Item successfully deleted', AppInfoType.Info)
       } else {
-        // Обработайте ошибку
-        console.error(result.error)
+        setInfo('Error with request', AppInfoType.Error)
       }
     })
   }
