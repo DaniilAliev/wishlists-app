@@ -61,5 +61,9 @@
     "save": "Save",
     "addFiles": "Add Files",
     "linkInput": "Link"
+  },
+  "AddWishlist": {
+    "add": "Add",
+    "name": "Name of Wishlist"
   }
 }

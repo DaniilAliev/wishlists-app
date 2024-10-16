@@ -5,17 +5,20 @@ import CloseSVG from '@/assets/images/Close.svg'
 import AppModalInput from './AppModalInput'
 import AppModalLink from './AppModalLInk'
 import { FC } from 'react'
+import { ModalType } from '@/data/AppModal/types'
+import AppModalAddWishlist from './AppModalAddWishlist'
 
 interface IAppModal {
-  type: 'input' | 'link' | ''
-  setIsOpen: (_: 'input' | 'link' | '') => void
+  type: ModalType
+  setIsOpen: (_: ModalType) => void
 }
 
 
 const AppModal: FC<IAppModal> = ({ type, setIsOpen }) => {
   const modalMap: { [key: string]: React.ReactElement } = {
     input: <AppModalInput />,
-    link: <AppModalLink />
+    link: <AppModalLink />,
+    addItems: <AppModalAddWishlist />
   }
 
   return (

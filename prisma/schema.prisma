@@ -14,12 +14,15 @@ model User {
   name String
   email String @unique
   imageUrl String
-  password String
+  password String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   cards Cart[]
+  wishlists Wishlist[]
+
+  friendsIds Int[]
 }
 
 model Cart {
@@ -33,6 +36,45 @@ model Cart {
 
   user User @relation(fields: [UserId], references: [id])
   UserId Int
+
+  wishlist Wishlist @relation(fields: [wishlistId], references: [id])
+  wishlistId Int
+
+  item Items @relation(fields: [itemId], references: [id])
+  itemId Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Wishlist {
+  id Int @id @default(autoincrement())
+
+  name String
+  imageUrl String
+  date DateTime
+
+  user User @relation(fields: [UserId], references: [id])
+  UserId Int
+
+  cards Cart[]
+  items Items[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Items {
+  id Int @id @default(autoincrement())
+
+  name String
+  price Int
+  url String
+  imageUrl String
+
+  wishlist Wishlist @relation(fields: [wishlistId], references: [id])
+  wishlistId Int
+
+  cart Cart[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

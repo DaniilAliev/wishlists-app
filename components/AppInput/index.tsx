@@ -1,18 +1,5 @@
-import { Input, TextField } from "@mui/material"
+import { TextField } from "@mui/material"
 import { FC } from "react"
-// import { createTheme } from '@material-ui/styles'
-
-// const theme = createTheme({
-//   components: {
-//     MuiOutlinedInput: {
-//       styleOverrides: {
-//         root: {
-//           borderRadius: '8px' // Установите желаемый радиус закругления
-//         }
-//       }
-//     }
-//   }
-// })
 
 const AppInput: FC<{ placeholder: string, type?: string, multiline?: boolean, rows?: number }> &
   React.ComponentProps<'input'> = ({ placeholder, type, multiline, rows, ...props }) => {

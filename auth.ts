@@ -37,7 +37,8 @@ export const authOptions = NextAuth({
             data: {
               email: user.email as string,
               name: user.name as string,
-              imageUrl: user.image as string
+              imageUrl: user.image as string,
+              password: '123'
             }
           }))
 

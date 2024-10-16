@@ -1,20 +1,20 @@
-import './DiscoverPageItem.scss'
+import './WishlistPageItem.scss'
 
 import AppImage from "@/components/AppImage/AppImage"
 import Link from "next/link"
 
-interface DiscoverItemProps {
+interface WishlistItemProps {
   imgSrc: string
   name: string
-  length: number
+  itemCount: number
   link: string
   t: (key: string) => string
 }
 
-const DiscoverItem: React.FC<DiscoverItemProps> = ({
+const WishlistItem: React.FC<WishlistItemProps> = ({
   imgSrc,
   name,
-  length,
+  itemCount,
   link,
   t
 }) => {
@@ -28,11 +28,11 @@ const DiscoverItem: React.FC<DiscoverItemProps> = ({
           <p>{name}</p>
         </div>
         <div>
-          <span className="text-dark-red text-xs">{`${length} ${t('items')}`}</span>
+          <span className="text-dark-red text-xs">{`${itemCount} ${t('items')}`}</span>
         </div>
       </div>
     </Link>
   )
 }
 
-export default DiscoverItem
+export default WishlistItem

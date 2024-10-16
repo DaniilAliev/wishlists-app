@@ -6,12 +6,12 @@ import AppAddItemOrLink from '@/components/AppAddItemOrLink'
 import { useTranslations } from 'next-intl'
 import AppModal from '@/components/AppModal'
 import { useState } from 'react'
-
+import { useModalState } from '@/utils/hooks/useModalState'
 
 const PageAddItem = () => {
   const t = useTranslations('AddItem')
 
-  const [modalType, setModalType] = useState<'input' | 'link' | ''>('')
+  const {modalType, setModalType} = useModalState()
 
   return (
     <>
